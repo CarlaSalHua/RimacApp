@@ -1,19 +1,16 @@
-import { StatusBar} from 'react-native';
-import {
-  SafeAreaProvider,
-  SafeAreaView,
-} from 'react-native-safe-area-context';
-import Button from './components/Button/Button';
-
+import { StatusBar } from 'react-native';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+import AppNavigator from './navigation/AppNavigator';
+import { NavigationContainer } from '@react-navigation/native';
 
 function App() {
   return (
-    <SafeAreaProvider>
-      <StatusBar barStyle="dark-content" />
-      <SafeAreaView>
-        <Button title="Hello World" onPress={() => {}} />
-      </SafeAreaView>
-    </SafeAreaProvider>
+    <NavigationContainer>
+      <SafeAreaProvider>
+        <StatusBar barStyle="dark-content" />
+          <AppNavigator />
+      </SafeAreaProvider>
+    </NavigationContainer>
   );
 }
 
