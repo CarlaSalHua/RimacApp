@@ -3,3 +3,5 @@ export { default as HospitalIcon } from './hospital.svg';
 export { default as ProtectIcon } from './protect.svg';
 export { default as UserIcon } from './user.svg';
 export { default as CheckIcon } from './check.svg';
+export { default as Phone } from './phone.svg';
+export { default as Checkbox } from './checkbox.svg';
