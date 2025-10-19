@@ -9,7 +9,7 @@ interface ButtonProps {
   style?: ViewStyle;
 }
 
-const Button= ({ title, onPress, disabled, style } : ButtonProps) => (
+const Button = ({ title, onPress, disabled, style } : ButtonProps) => (
   <Pressable
     accessibilityRole="button"
     onPress={onPress}
