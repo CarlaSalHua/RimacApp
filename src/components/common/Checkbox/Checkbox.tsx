@@ -1,6 +1,7 @@
-import React from "react";
-import { Pressable, Text, View } from "react-native";
-import { styles } from "./Checkbox.styles";
+import React from 'react';
+import { Pressable, Text, View } from 'react-native';
+import { styles } from './Checkbox.styles';
+import { CheckboxIcon } from '@/assets/icons';
 
 interface CheckboxProps {
   checked: boolean;
@@ -8,14 +9,16 @@ interface CheckboxProps {
   label: string;
 }
 const Checkbox = ({ checked, onChange, label }: CheckboxProps) => (
-  <Pressable
-    accessibilityRole="checkbox"
-    onPress={() => onChange(!checked)}
-    style={styles.row}
-  >
-    <View style={[styles.box, checked && styles.boxChecked]} />
+  <View style={styles.container}>
+    <Pressable
+      accessibilityRole="checkbox"
+      onPress={() => onChange(!checked)}
+      style={styles.row}
+    >
+      {checked ? <CheckboxIcon width={20} height={20} /> : <View style={styles.box} />}
+    </Pressable>
     <Text style={styles.text}>{label}</Text>
-  </Pressable>
+  </View>
 );
 
 export default Checkbox;

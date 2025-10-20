@@ -4,12 +4,12 @@ const logoRimac = require('./logoRimac.png');
 
 const familyImg = require('./fam.png');
 const blurGreen = require('./blurGreen.png');
-const blutPurple = require('./blurPurple.png');
+const blurPurple = require('./blurPurple.png');
 
 export {
     logoWhite,
     logoRimac,
     familyImg,
     blurGreen,
-    blutPurple,
+    blurPurple,
 };

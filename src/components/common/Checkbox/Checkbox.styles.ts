@@ -2,11 +2,14 @@ import { colors } from "@/theme/colors";
 import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
-  row: {
+  container: {
     flexDirection: "row",
     alignItems: "center",
     gap: 8,
-    marginVertical: 6,
+    marginVertical: 10,
+  },
+  row: {
+    alignItems: "center",
   },
   box: {
     width: 20,
@@ -14,9 +17,6 @@ export const styles = StyleSheet.create({
     borderRadius: 6,
     borderWidth: 1,
     borderColor: colors.borderNeutral,
-  },
-  boxChecked: { 
-    backgroundColor: colors.black 
   },
   text: { 
     color: colors.blackNeutral

@@ -8,6 +8,7 @@ export const styles = StyleSheet.create({
     borderRadius: 28,
     alignItems: "center",
     justifyContent: "center",
+    minHeight: 56,
   },
   text: { 
     color: colors.white, 

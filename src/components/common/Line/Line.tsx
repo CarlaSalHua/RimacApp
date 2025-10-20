@@ -1,9 +1,22 @@
-import { StyleSheet, View } from 'react-native';
+import { StyleProp, StyleSheet, View, ViewStyle } from 'react-native';
 import React from 'react';
 import { colors } from '@/theme/colors';
 
-const Line = () => {
-  return <View style={styles.line} />;
+interface LineProps {
+  style?:  StyleProp<ViewStyle>;
+  color?: string;
+}
+
+const Line = ({ style, color }: LineProps) => {
+  return (
+    <View
+      style={[
+        styles.line,
+        { backgroundColor: color || colors.grayForte },
+        style,
+      ]}
+    />
+  );
 };
 
 export default Line;
@@ -12,7 +25,6 @@ const styles = StyleSheet.create({
   line: {
     width: '100%',
     height: 1,
-    backgroundColor: colors.grayForte,
     marginVertical: 24,
   },
 });

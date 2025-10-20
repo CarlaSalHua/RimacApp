@@ -5,6 +5,7 @@ export const colors = {
   white: '#FFFFFF',
   neutral: '#FAFBFF',
   grayForte: '#2B304E',
+  border: '#5E6488',
   grayNeutral: '#7981B2',
   borderNeutral: '#A9AFD9',
   success: '#389E0D',
