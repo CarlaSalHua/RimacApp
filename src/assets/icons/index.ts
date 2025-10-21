@@ -5,3 +5,7 @@ export { default as UserIcon } from './user.svg';
 export { default as CheckIcon } from './check.svg';
 export { default as Phone } from './phone.svg';
 export { default as CheckboxIcon } from './checkbox.svg';
+export { default as Hospital} from './hospit.svg';
+export { default as Family} from './family.svg';
+export { default as Laptop} from './laptop.svg';
+export { default as Medico} from './medico.svg';
