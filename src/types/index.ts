@@ -1,7 +1,7 @@
 export type User = {
   name: string;
-  lastname: string;
-  birthday: string;
+  lastName: string;
+  birthDay: string;
   documentType: 'DNI' | 'CE';
   documentNumber: string;
   phone: string;
@@ -10,9 +10,10 @@ export type User = {
 export type Plan = {
   name: string;
   price: number;
+  age: number;
   description: string[];
 };
 
 export type PlansResponse = {
-  list: Plan[];
+  list: Plan[]
 };
