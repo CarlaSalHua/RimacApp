@@ -5,6 +5,7 @@ import { Plan } from '@/types';
 import Line from '../Line/Line';
 import { styles } from './PlanCard.styles';
 import { getBulletIcon, getPlanIcon } from '@/utils/icons';
+import { highlightWords } from '@/utils/highlightWords';
 
 interface PlanCard {
   item: Plan;
@@ -39,20 +40,20 @@ const PlanCard = ({
         <View style={styles.description}>
           {item.description.map((d, i) => (
             <View key={i} style={styles.containerRow}>
-              <View style={styles.iconContainer}>
-                {getBulletIcon(i)}
-              </View>
-              <Text key={i} style={styles.bullet}>
-                {d}
-              </Text>
+              <View style={styles.iconContainer}>{getBulletIcon(i)}</View>
+              <Text style={styles.bullet}>{highlightWords(d)}</Text>
             </View>
           ))}
         </View>
       </View>
-      <Button style={styles.button} textStyle={styles.btnText} title="Seleccionar plan" onPress={onSelect} />
+      <Button
+        style={styles.button}
+        textStyle={styles.btnText}
+        title="Seleccionar plan"
+        onPress={onSelect}
+      />
     </View>
   );
 };
 
 export default PlanCard;
-
