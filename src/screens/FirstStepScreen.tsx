@@ -1,4 +1,4 @@
-import { ScrollView, StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 import React, { useEffect, useMemo } from 'react';
 import { colors } from '@/theme/colors';
 import Card from '@/components/common/Card/Card';
@@ -39,14 +39,18 @@ const FirstStepScreen = ({ handleNext }: FirstStepScreenProps) => {
   }, [sel, all, userAge]);
 
   const renderItem = ({ item }: { item: Plan }) => (
-    <PlanCard item={item} onSelect={() => {
+    <PlanCard
+      item={item}
+      onSelect={() => {
         dispatch(selectPlan(item));
         handleNext();
-      }} contentHorizontalPadding={30} />
+      }}
+      contentHorizontalPadding={50}
+    />
   );
 
   return (
-    <ScrollView>
+    <View style={styles.contain}>
       <View style={styles.container}>
         <Text style={styles.title}>{name} ¿Para quién deseas cotizar?</Text>
         <Text style={styles.subtitle}>
@@ -71,18 +75,21 @@ const FirstStepScreen = ({ handleNext }: FirstStepScreenProps) => {
           data={visiblePlans}
           onIndexChange={i => console.log('page:', i)}
           renderItem={renderItem}
-          contentHorizontalPadding={30}
+          contentHorizontalPadding={50}
         />
       )}
-    </ScrollView>
+    </View>
   );
 };
 
 export default FirstStepScreen;
 
 const styles = StyleSheet.create({
+  contain: {
+    marginBottom: 48,
+  },
   container: {
-    padding: 16,
+    padding: 24,
     paddingBottom: 32,
     gap: 12,
   },
