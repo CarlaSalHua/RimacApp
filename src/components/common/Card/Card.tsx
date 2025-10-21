@@ -2,6 +2,7 @@ import { View, Pressable, Text } from 'react-native';
 import React from 'react';
 import { CheckIcon, UserIcon } from '@/assets/icons';
 import { styles } from './Card.styles';
+import { colors } from '@/theme/colors';
 
 interface CardProps {
   active?: boolean;
@@ -15,7 +16,7 @@ const Card = ({ active, title, text, onPress, Icon = UserIcon }: CardProps) => {
   return (
     <Pressable
       onPress={onPress}
-      style={[styles.card, active && styles.cardActive]}
+      style={[styles.card, {borderColor: active ? colors.black : colors.white}]}
     >
       <View style={styles.iconContent}>
         {active ? (

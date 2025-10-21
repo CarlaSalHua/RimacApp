@@ -8,8 +8,7 @@ export const styles = StyleSheet.create({
     paddingTop: 16,
     padding: 24,
     paddingBottom: 40,
-    borderWidth: 1,
-    borderColor: colors.white,
+    borderWidth: 2,
     shadowColor: '#A9AFD9',
     shadowOffset: {
       width: 0,
@@ -38,6 +37,7 @@ export const styles = StyleSheet.create({
   },
   cardActive: {
     borderColor: colors.black,
+    borderWidth: 2,
   },
   cardTitle: {
     fontSize: 20,

@@ -8,7 +8,7 @@ export const styles = StyleSheet.create({
         alignItems: 'center',
         paddingVertical: 32,
         paddingHorizontal: 24,
-        backgroundColor: colors.black100,
+        backgroundColor: colors.blackNeutral,
     },
     logo: {
         width: 138,
