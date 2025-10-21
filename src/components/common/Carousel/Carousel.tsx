@@ -16,6 +16,7 @@ import {
   NativeSyntheticEvent,
 } from 'react-native';
 import { styles } from './Carousel.styles';
+import { Back, BackActive } from '@/assets/icons';
 
 type Props = {
   data: Plan[];
@@ -36,7 +37,7 @@ export default function Carousel({
   const [index, setIndex] = useState(initialIndex);
 
   const { width: screenWidth } = Dimensions.get('window');
-  // ancho de cada “página” (card). Deja un pequeño margen visual
+  // espacio entre ítems
   const itemSpacing = 16;
   const itemWidth = useMemo(
     () => screenWidth - contentHorizontalPadding * 2,
@@ -111,11 +112,13 @@ export default function Carousel({
         <Pressable
           onPress={handlePrev}
           disabled={index === 0}
-          style={[styles.circleBtn, index === 0 && styles.btnDisabled]}
+          style={[styles.circleBtn]}
           accessibilityRole="button"
           accessibilityLabel="Anterior"
         >
-          <Text style={styles.chev}>‹</Text>
+          {
+            index === 0 ? <Back width={24} height={24} /> : <BackActive width={24} height={24} />
+          }
         </Pressable>
 
         <Text style={styles.pageText}>
@@ -126,14 +129,14 @@ export default function Carousel({
           onPress={handleNext}
           disabled={index === data.length - 1 || data.length === 0}
           style={[
-            styles.circleBtn,
-            (index === data.length - 1 || data.length === 0) &&
-              styles.btnDisabled,
+            styles.circleBtn
           ]}
           accessibilityRole="button"
           accessibilityLabel="Siguiente"
         >
-          <Text style={styles.chev}>›</Text>
+          {
+            (index === data.length - 1 || data.length === 0) ? <Back width={24} height={24} style={{ transform: [{ rotate: "180deg" }] }} /> : <BackActive width={24} height={24} style={{ transform: [{ rotate: "180deg" }] }} />
+          }
         </Pressable>
       </View>
     </View>

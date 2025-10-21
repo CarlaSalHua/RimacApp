@@ -30,11 +30,8 @@ export const styles = StyleSheet.create({
     width: 32,
     height: 32,
     borderRadius: 16,
-    borderWidth: 1,
-    borderColor: '#C9CEEA',
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#fff',
   },
   btnDisabled: { 
     opacity: 0.5 
