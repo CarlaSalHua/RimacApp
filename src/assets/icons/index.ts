@@ -9,3 +9,5 @@ export { default as Hospital} from './hospit.svg';
 export { default as Family} from './family.svg';
 export { default as Laptop} from './laptop.svg';
 export { default as Medico} from './medico.svg';
+export { default as Back } from './back.svg';
+export { default as BackActive } from './backActive.svg';
