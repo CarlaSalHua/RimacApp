@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 import {
   KeyboardAvoidingView,
   Platform,
@@ -15,9 +16,12 @@ import { colors } from '@/theme/colors';
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RootStackParamList } from '@/navigation/AppNavigator';
+import { useAppDispatch } from '@/store';
+import { loadUser, setCredentials } from '@/store/userSlice';
 
 const LoginForm = () => {
   const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
+  const dispatch = useAppDispatch();
 
   const {
     control,
@@ -29,7 +33,10 @@ const LoginForm = () => {
   });
 
   const onSubmit = async (values: LoginFormValues) => {
-    console.log(values);
+    dispatch(
+      setCredentials({ documentNumber: values.dni, phone: values.phone })
+    );
+    await dispatch(loadUser()); 
     navigation.navigate('StepsStatus');
   };
 
@@ -125,12 +132,12 @@ const styles = StyleSheet.create({
     letterSpacing: 0.2,
     fontWeight: '600',
     marginVertical: 8,
-    color: colors.black100,
+    color: colors.blackNeutral,
   },
   text: {
     fontSize: 12,
     fontWeight: '600',
-    color: colors.black100,
+    color: colors.blackNeutral,
     textDecorationLine: 'underline',
   },
   err: {
